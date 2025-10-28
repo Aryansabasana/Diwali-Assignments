@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart - Save Money. Live Better.</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0071ce;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0071ce;
+            color: white;
+            padding: 10px 0;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px 10px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            max-width: 600px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: none;
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .user-actions a {
+            color: white;
+            font-size: 14px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #004f9a;
+            color: white;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+        }
+        
+        /* Walmart+ Banner */
+        .walmart-plus-banner {
+            background-color: #ffc220;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .walmart-plus-banner h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .try-button {
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .terms {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Flash Deals */
+        .flash-deals {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .flash-deals h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .discount {
+            color: #c00;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 4px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .current-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #c00;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+        
+        .shipping {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .product-title {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .add-button {
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+        }
+        
+        .options {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        /* Special Sections */
+        .special-sections {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .special-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .special-card h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .special-button {
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        /* Walmart+ Benefits */
+        .walmart-plus-benefits {
+            background-color: #004f9a;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .walmart-plus-benefits h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Category Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .shop-now {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #0071ce;
+            font-weight: bold;
+        }
+        
+        /* Air Freshener Section */
+        .air-freshener-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .air-freshener-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .bathroom-pack {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        
+        /* Patio & Garden Section */
+        .patio-garden-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .reduced-price {
+            color: #c00;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .clearance {
+            background-color: #c00;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        /* Beauty Section */
+        .beauty-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .beauty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .beauty-product {
+            text-align: center;
+        }
+        
+        .beauty-image {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .beauty-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .beauty-brand {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .beauty-title {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .category-item {
+            text-align: center;
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .category-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 30px 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .feedback-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .feedback-section h2 {
+            margin-bottom: 10px;
+        }
+        
+        .feedback-button {
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-column a {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .special-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .beauty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">Walmart</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search everything at Walmart online and in store">
+            </div>
+            <div class="user-actions">
+                <a href="orders.html">Account</a>
+                <a href="orders.html">Orders</a>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="#">Departments</a>
+                <a href="#">Services</a>
+                <a href="#">Weekly Ad</a>
+                <a href="#">Registry</a>
+                <a href="#">Gift Cards</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Store Finder</a>
+                <a href="#">For Business</a>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <div class="container">
+        
+        <div class="walmart-plus-banner">
+            <h2>Save more with Walmart+</h2>
+            <p>Members get Free Delivery</p>
+            <button class="try-button">Try Walmart+ for free</button>
+            <p class="terms">$35 min. One free trial per member. T&C apply.</p>
+        </div>
+        
+        <!-- Flash Deals -->
+        <div class="flash-deals">
+            <h2>Flash Deals</h2>
+            <p class="discount">Up to 65% off</p>
+        </div>
+        
+        
+        <div class="product-grid">
+        
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/Havato-Countertop-Ice-Maker-9-Bullet-Ice-Cubes-in-6-Mins-26lbs-24H-w-Scoop-Basket-Matte-Black_a9015bc1-4119-436e-81aa-2b9eead1597f.e92278cf851710fab30438188c851d0f.webp?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Hayato Countertop Ice Maker" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $379</span>
+                    <span class="original-price">$22499</span>
+                </div>
+                <div class="shipping">+$2,000 shipping Options from $329 - $38.59</div>
+                <div class="product-title">Hayato Countertop Ice Maker, 9 Bullet Ice Cubes in 6 Mins...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+            
+            
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/Vomeast-Baby-Stroller-Foldable-Aluminum-Alloy-Stroller-with-Reversible-Travel-Stroller-for-Newborn-Infant-Grey_b718235f-7699-4a1f-9d37-18584faabbf7.e3d3a93469cdd41eb1fadf155766c51d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Vomcast Baby Stroller" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $11879</span>
+                    <span class="original-price">$49899</span>
+                </div>
+                <div class="product-title">Vomcast Baby Stroller, Foldable Aluminum Alloy Stroller with...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+            
+            
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/Dreo-Space-Heaters-for-Home-Portable-Heater-with-Remote-70-Oscillation-1500W-PTC-Electric-Heater-with-Thermostat-for-Inside-1-12h-Timer-Office_adfafb35-b4f9-410f-988c-dba2dee4ee81.ded490f0fc7885693937a44d4d657c49.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Dreo Space Heater" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $3999</span>
+                    <span class="original-price">$49499</span>
+                </div>
+                <div class="product-title">Dreo Space Heaters for Home, Portable Heater with Remote...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+            
+            
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/Bestier-Queen-Size-Bed-Frame-with-49-2-High-LED-Storage-Headboard-Shelf-Metal-Platform-Bed-Black_9aa9bef4-d8e0-4362-bfd4-cd78552f5ed6.916c4fcf538e41e6306d8341a4d21ced.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF" alt="Bestier Queen Size Bed Frame" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $10579</span>
+                    <span class="original-price">$25999</span>
+                </div>
+                <div class="shipping">More options from $79379</div>
+                <div class="product-title">Bestier Queen Size Bed Frame with 49.2" High LED Storage...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+            
+            
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/AOVOPRO-WHITE-ES80-350W-8-5-Foldable-Electric-Scooter-for-Adults-and-Child-21-Miles-Range_f83dcbd4-d22b-4538-90f6-4e1f6979071a.1b6e661fafa281ba767b8255504eb1c7.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="AOVOPRO Electric Scooter" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $16599</span>
+                    <span class="original-price">$39800</span>
+                </div>
+                <div class="product-title">AOVOPRO VT01 Electric Scooter 350W 8.5" Foldable Scooter for...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+            
+            
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/seo/SANPTENT-15-6-Full-HD-Windows-11-Pro-Laptop-Office-Study-16GB-RAM-512GB-SSD-Intel-Celeron-N5095-FingerPrint-Backlit-Keyboard-Wi-Fi-HDMI-Silver_376e4a28-2192-43a6-a3bc-e80ff61df4df.b91ecc0bc075405cfca106a46c46b068.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Casacomoda Computer Desk" class="product-image">
+                <div class="options">Options</div>
+                <div class="product-price">
+                    <span class="current-price">Now $4998</span>
+                    <span class="original-price">$10999</span>
+                </div>
+                <div class="shipping">Options from $4938 - $4499</div>
+                <div class="product-title">Casacomoda Computer Desk L Shaped, 51" Reversible L Shaped...</div>
+                <button class="add-button">+ Add</button>
+            </div>
+        </div>
+        
+        <!-- Walmart+ Benefits -->
+        <div class="walmart-plus-benefits">
+            <h3>Walmart+ members earn 5% cash back at Walmart</h3>
+            <a href="#" style="color: white;">Learn more</a>
+        </div>
+        
+        <!-- Special Sections -->
+        <div class="special-sections">
+            <div class="special-card">
+                <h3>Out of brew? We're on it.<br>Coffee & more in as fast as 1 hour*</h3>
+                <button class="special-button">Show now</button>
+            </div>
+            <div class="special-card">
+                <h3>Total relief in 1 spot<br>Family cold, flu & Rx, delivered together</h3>
+                <button class="special-button">Order now</button>
+            </div>
+        </div>
+        
+        <!-- Express Delivery -->
+        <div class="special-sections">
+            <div class="special-card">
+                <h3>Christmas light & decor setup</h3>
+                <button class="special-button">Show now</button>
+            </div>
+            <div class="special-card">
+                <h3>Fall yard cleanup services</h3>
+                <button class="special-button">Schedule now</button>
+            </div>
+        </div>
+        
+        <!-- Air Freshener Section -->
+        <div class="air-freshener-section">
+            <h2>Apple & more crisp scents<br>Cozy fall air fresheners</h2>
+            <a href="#" class="shop-now">Shop now</a>
+            
+            <h3 class="section-subtitle">Set the scene for autumn<br>Apple, cinnamon, pumpkin & more.</h3>
+            
+            <div class="bathroom-pack">BATHROOM<br>2 PACKS</div>
+            
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Air-Wick-Plug-in-Scented-Oil-Refill-4-Count-Pumpkin-Spice_afb9f22a-de62-46b3-96a6-60b27e96f106.cbd19cb77584e4913efe0478c882f1ea.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Air Wick Plug-In Scented Oil" class="product-image">
+                    <button class="add-button">+ Add</button>
+                    <div class="product-price">
+                        <span class="current-price">$998</span>
+                        <span class="original-price">$32/box</span>
+                    </div>
+                    <div class="product-title">Air Wick Plug-In Scented Oil Air Freshener Warmer Refills, Ripe...</div>
+                </div>
+                
+                <!-- Air Freshener 2 -->
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Febreze-Small-Spaces-Air-Freshener-Odor-Fighting-Gain-Original-3-Count_6f7ebbb9-773d-4d4c-8927-52648aa09762.504d149730ac3732c0464d1b0f26b456.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Febreze Bath Air Freshener" class="product-image">
+                    <div class="product-price">
+                        <span class="current-price">Now $594</span>
+                        <span class="original-price">$1188/1 oz</span>
+                    </div>
+                    <div class="product-title">Febreze Bath Air Freshener, Odor-Fighting, Baked Cinnamon...</div>
+                    <button class="add-button">+ Add</button>
+                </div>
+                
+                <!-- Air Freshener 3 -->
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Febreze-Air-Mist-Odor-Fighting-Air-Freshener-Baked-Cinnamon-Apples-8-8-oz-Aerosol-Pack-of-2_118613fa-b0f7-4f49-bf22-47bd6e539506.bd8139f9e04f250a6e4114e31a6013f8.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF " alt="Febreze Air Mist" class="product-image">
+                    <div class="product-price">
+                        <span class="current-price">$624</span>
+                    </div>
+                    <div class="shipping">Options from $6:24 - $7:82</div>
+                    <div class="product-title">Febreze Air Mist, Odor-Fighting Air Freshener, Sea Salt Caramel ...</div>
+                    <button class="add-button">+ Add</button>
+                </div>
+            </div>
+            
+            <a href="#" style="display: block; text-align: right; margin-top: 10px;">View all</a>
+        </div>
+        
+        <!-- Patio & Garden Section -->
+        <div class="patio-garden-section">
+            <h2 class="section-title">Save on patio & garden</h2>
+            
+            <div class="product-grid">
+                <!-- Patio Product 1 -->
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Summit-Living-4-Burner-Propane-Gas-Grill-with-Side-Burner-Stainless-Steel_19fb4b5b-f180-430a-a22b-a12f63528a9d.e958ab919a54cb75089bee10a1e7e8d2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Newgrill Stainless Steel Gas Grill" class="product-image">
+                    <div class="reduced-price">Reduced price</div>
+                    <div class="options">Options</div>
+                    <button class="add-button">+ Add</button>
+                    <div class="product-price">
+                        <span class="current-price">Now $15497</span>
+                        <span class="original-price">$39900</span>
+                    </div>
+                    <div class="product-title">Newgrill Stainless Steel 2 Burner Portable Gas Grill with Locking...</div>
+                </div>
+                
+                <!-- Patio Product 2 -->
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/YEERSWAG-67x20x3-15-inch-Non-Slip-Lounge-Chaise-Chair-Cushion-High-Back-Cushion-Rocking-Chair-Padded-Sofa-Mat-with-Pillow_9efcda21-ed06-4e3b-acb3-e7479d949a98.d36dfac882697bca1f195aa295c88094.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="YEERSWAG Lounge Chair Cushion" class="product-image">
+                    <div class="reduced-price">Reduced price</div>
+                    <div class="options">Options</div>
+                    <div class="product-price">
+                        <span class="current-price">Now $3099</span>
+                        <span class="original-price">$4569</span>
+                    </div>
+                    <div class="product-title">YEERSWAG 67.2ft.3 Inch Non Slip Lounge Chalse Chair Cushion...</div>
+                    <button class="add-button">+ Add</button>
+                </div>
+                
+                
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Costway-10-x30-Party-Wedding-Tent-Event-Canopies-Heavy-Duty-Pavilion-5-Sidewall-44lbs_80dedf8b-9e08-47d9-b301-36ba81bfd93c.c01f5f03e00b59ff45882ea3a8f78606.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Costway Outdoor Canopy" class="product-image">
+                    <div class="options">Options</div>
+                    <div class="product-price">
+                        <span class="current-price">Now $11999</span>
+                        <span class="original-price">$32800</span>
+                    </div>
+                    <div class="product-title">Costway 10" x 10" Beige Event Outdoor Canopy, Waterproof</div>
+                    <button class="add-button">+ Add</button>
+                </div>
+                
+                
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/Costway-Portable-Mini-Walk-In-Outdoor-4-Tier-8-Shelves-Greenhouse_1589a199-ae94-44cb-b54c-53766680a5b4.938c43aa5e9fb37a981fe19c4fb6b6b3.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Costway Mini Greenhouse" class="product-image">
+                    <button class="add-button">+ Add</button>
+                    <div class="product-price">
+                        <span class="current-price">Now $4999</span>
+                        <span class="original-price">$9800</span>
+                    </div>
+                    <div class="product-title">Costway 5.5" x 5.5" x 6" Portable Mini Garden Greenhouse with Windo...</div>
+                </div>
+                
+            
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/YAHHU-6-inch-Mini-Chainsaw-with-21V-Battery-Powered-Cordless-Handheld-Electric-Chainsaw-Yellow-New_8bdfa475-2284-4d1d-be66-addc71a66e2a.1aa20195229993a9e2f7cbffbe0b0d65.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="YAHHU Mini Chainsaw" class="product-image">
+                    <div class="clearance">Clearance</div>
+                    <div class="options">Options</div>
+                    <button class="add-button">+ Add</button>
+                    <div class="product-price">
+                        <span class="current-price">Now $3299</span>
+                        <span class="original-price">$3789</span>
+                    </div>
+                    <div class="product-title">YAHHU 6 Inch Lovely Pink Mini Chainsaw, Portable Handheld...</div>
+                </div>
+                
+                
+                <div class="product-card">
+                    <img src="https://i5.walmartimages.com/seo/KMJETNIVY-Rain-Barrel-Upgrade-Anti-Collapse-Collapsible-Rainwater-Collection-System-Portable-Water-Storage-Tank-Garden-Water-Catcher-Green-100G_095421c0-9d6c-41b2-9fe4-82e67850be22.2c8d3f76884a6b269efa8c352a73e85e.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="FCMP Outdoor Rain Water Catcher" class="product-image">
+                    <button class="add-button">+ Add</button>
+                    <div class="product-price">
+                        <span class="current-price">Now $11999</span>
+                        <span class="original-price">$83899</span>
+                    </div>
+                    <div class="product-title">FCMP Outdoor BC4000 50 Gallon Outdoor Rain Water Catcher...</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Grid -->
+        <div class="section">
+            <h2 class="section-title">Get it all right here</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <div class="category-icon">🛒</div>
+                    <div>Grocery</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🏠</div>
+                    <div>Home</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🌿</div>
+                    <div>Patio & Garden</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">👕</div>
+                    <div>Fashion</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">💻</div>
+                    <div>Tech</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Beauty Section -->
+        <div class="beauty-section">
+            <h2 class="section-title">LATEST & greatest</h2
