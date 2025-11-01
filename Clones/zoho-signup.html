@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zoho - Sign Up</title>
+  <style>
+  
+    .zoho-signup-page {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --label: #333;
+      --input-border: #cccccc;
+      --input-focus: #0073e6;
+      --btn-bg: #ff2713;
+      --btn-text: #ffffff;
+      --link: #0073e6;
+      --footer: #90a4ae;
+
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+   
+    .header {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .signin-link {
+      font-size: 14px;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .signin-link span {
+      color: #d32f2f;
+      font-weight: 500;
+    }
+
+   
+    .signup-form {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .form-title {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 15px;
+      color: var(--label);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1.5px solid var(--input-border);
+      border-radius: 4px;
+      transition: border 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.2);
+    }
+
+    .phone-input {
+      display: flex;
+      gap: 8px;
+    }
+
+    .phone-prefix {
+      width: 60px;
+      padding: 12px 8px;
+      text-align: center;
+      background: #f5f5f5;
+      border: 1.5px solid var(--input-border);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .phone-number {
+      flex: 1;
+    }
+
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .terms input[type="checkbox"] {
+      margin-top: 3px;
+    }
+
+    .terms a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .submit-btn {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #f6382a;
+    }
+
+    .social-login {
+      margin: 32px 0 60px;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+    }
+
+   
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 13px;
+      color: var(--footer);
+    }
+
+   
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      .form-title {
+        font-size: 24px;
+      }
+      .submit-btn {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="zoho-signup-page">
+
+  <div class="container">
+
+    
+    <header class="header">
+      <div class="logo">
+        
+        <img src="https://res.cloudinary.com/dcxu5wckd/image/upload/v1761825160/Screenshot_2025-10-30_171522_rogrzm.svg     " alt="Zoho Logo" />
+      </div>
+      <a href="#" class="signin-link">Have a Zoho Account? <span>SIGN IN</span></a>
+    </header>
+
+    
+    <main class="signup-form">
+      <h1 class="form-title">Start with your free account today.</h1>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email <span style="color:#d32f2f;">*</span></label>
+          <input type="email" id="email" placeholder="" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span style="color:#d32f2f;">*</span></label>
+          <input type="password" id="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number <span style="color:#d32f2f;">*</span></label>
+          <div class="phone-input">
+            <div class="phone-prefix">+91</div>
+            <input type="tel" id="phone" class="phone-number" required />
+          </div>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="terms" required />
+          <label for="terms">
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn">SIGN UP FOR FREE</button>
+      </form>
+
+      <div class="social-login">
+        or sign in using
+        <div class="social-icons">
+          <img src="data:image/png;base64,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" alt="Google" />
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAYFBMVEUAfrv///+ev9wAeLgAc7YAe7kAdrd1qdDX5fBbmsj2+fyryeHu9flEjcLb6fPD2OkRgr1Uk8WBr9NBksUAb7RspM4AbLPm8PeXu9rR4O2yzuRlncqNttcnhr8pgby80+bBmoq5AAADl0lEQVR4nO2c23KrMAxFAVvmmlCgBMit//+XB2iSBiK1NfQgPXg/daaazkIytiRTef5DSZeG1ZvHoLcqTLvki8R7/JQWoBVwMHkeKA1F+gKVg2YCeoBpyKdQpWFGGrFM+QSVxJob6FM6Th5QseGmucvEd6hSiJ8G6fITKhfjp0EmH6FAwBr/EsAAlQoK3iCd+l5SiHJU76oi8TphTD1V50mL3hA/L1TcEHOp0Kvkha/yWHKV7yUQyenvBMoYw5WP4jIHqM/BObwcJOSAo8ylbG75aRbsZKQS7/UdacRquXN4b8iXP/yp9hf2vd8c/bmiK7Ov3ud+Gn3F6ypTI0y+H7BmFNcGhWJNCFWJMvWlPePGcMAd1YsRCigmP2aLn8KX+bjU2VxlziTUB9v7ZwISquODakmonA1KhSQUX0EGOxKq5NsTDgkF5fFt6TolmCLGww8KwlWs5bTBXcXcDDEZBrXjhYICoWLvhZjXZRXyFzTqmk+Q9gU/09j/3z+Qstbjjt1NSldBF+2jLo21EKRBYPoSFLSAOtTJyclSoIZW4F0irqaMKco0b4YDK2miYxvu9JpjoX9CRPCz0ZcJGDhHs2M9i86wuIOq6maP6OP5OaGIEJNud/u1rl47XKOO8cK9mKhnJtkwxFh6mn3mXApSMs9PjtdFh9ZaKH0iWySjUbgk118JpVrSTTct6Umsg1JUMfSk1D6Cq6AUscKnOlpHcA0UWTTO1NpSrYC60n2kmWrLCC6Hak6/ZfIzS1et8BRaMOKybOsuh7JRZlfcbgNl+QZuBOWLhDrbrKqtoHKbXWErqMzmsmcrKL/eHCrJfty1bLrNfwDVBPWpKIpT+e3xHL1vCJVXh752GaS0Cb4x3BCqVM+vlT7RUbT42GYdVFLMVoq5kvwWd3XroF77kIa6arXJX1ZBHZF1onPc1mZPXwOFnv1Q8ULhWZKJcKh2Gyj8Iz/qDtGi1loBlR3Qvwgn/BG2gSISN7jgNfM2UCXxjus9Zr0RFLUb6o4RisqQiJ1qE6iEqlCIwnkTKLJsclAOykE5KAfloByUg3JQDspBOSgH5aAclINyUA7KQTkoB/ULqP0UCjP5j91hqNIA0eQ2AXaYSXuhnrPGzIOTxTcAYDCpX9hY/kkJH+46/bEETuF4kzlChf0frF6kQpljeUQOMBI56knkUCyZ48NkDloTOZJO5vA+mWMORQ6E9GWOzvRFDhn1JY1j/Qf+T0fixk9dKwAAAABJRU5ErkJggg==" alt="LinkedIn" />
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPsAAACUCAMAAABiDq8bAAAAtFBMVEX/////ugAAo/R+ugD4UQz/twDl8NTW6vwAn/T92NDh7dD+3NbE3p3m79Z4twCVxVQxr/UAmPOd1Pr/3p3/uxv/sgD/79ZssQD4MgD7s5+DvRv4SgD6eFb/wzGPyvj/1o/4Uxvz8/N7e3uHh4fAwMCTk5Pi4uJwcHDX19enp6efn5+1tbVnZ2fMzMz/9/X+7Obw9ub3AAD7qpNXqQD5ZUj8wK7Q5bCKwEbn8/3H5vz/68f/9efjz+StAAADJUlEQVR4nO3bWVfVMBSG4aI4IM4TOJuxTdMiztP//19mJ+05oBdqYFHrer8LzqYndOVp0qRctGlIZY72qvNmOsXxjeosSm/23h7W5t10ipu3Dyrz/tai9v3D3cq8fjLbn16uzAF27NixY8eOHTt27NixY8eOHTt27NixY8eOHTt27NixY8eOHTt27NixY8eOHTt27NixY8eOHTt27NixYz+b/Vlldrf225VZ2v7heW0+Tqf4dKc2n48XtR/tV2fzTujV2iz8TighhBDyv+ba3ercn07x4EVtdh4va793vTYb+8MrlXm0tP1Sbbb2ncpgx44dO3bs2LFjx44dO3bs2LFjx44dO3bs2LFjx44dO3bs2LFjx44dO3bs2LFjx44dO3bs2LFjx44dO/Yz2mtfj9vad1b6ftyXl9X5Op3i26vqfF/UTggh5Lzil+7A32WM6kSdfkRTKwjt4M6lTxcV1/ZzOZohXQc92Loz2SF06bL5Uf2+7b8Rp/Xc16BbKauHfcgf9fPmwuOMjqXyrtinS6FUKZSUp46cKtWmDG1ua023loF3LphSRRPEPro8+NFoY6Vy1rvWnjzSqG3pg9FOyrFPheuUk4+VjHzqaDtKoVyMYrdyD3hnoo06XQaljQvRN944O0bdy9D2JqYypD/y2kUbdFBNZ5220avYmxBXMvDONCavdqPu7GxXId+06VBa+3Kp+jwdxjbKj05KsZt81Gq5emnOS+ya7vdElN4Gp+ww2b0ua72s2zpfmS7zcvPUft4J/FCmTC/TYZV2JatdZ2yzsc9SSbFbXURynbzM+a4MeJndeW1fpb0JRuUub+2m2zT41d54mxa2PjWJ67d7PaaVTv3JuE+fyncutZuPrtiuXD+Kdnu/m7Ln2+7n+93IhpgHu0vbgy/PgMqFtd7vMpON9H6zzqfJLJPeDpu1Lj30CcnKTm/z/p2/dKYcldazXa/L7o2YpnFv8/7e9tENaRtT0/N+aiJH5JdO6zCVqpR5lvTlmTZ9u5aRj7nfY8z7uQx+J/t2o9JzWp8XvDBvaNaZvqCUda58mcswLQXTP0U+9uds/wHwnliDppJbNgAAAABJRU5ErkJggg==" alt="Microsoft" />
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+ 
+  <footer class="footer">
+    <p>© 2025, Zoho Corporation Pvt. Ltd. All Rights Reserved.</p>
+  </footer>
+
+</div>
+
+
+</body>
+</html>
